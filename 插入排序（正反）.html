@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入排序（正反）</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var ary = [1,5,7,3,4,2,6,0,8];
+        function insertSort1() {
+            var ary = arguments[0];
+            var ary2 = [];
+            if(ary.length < 2){
+                return ary;
+            }
+            ary2.push(ary[0]);
+            for(var i = 1; i < ary.length; i++){
+                for(var j = ary2.length - 1; j >= 0; j--){
+                    if(ary[i] > ary2[j]){
+                        ary2.splice(j+1, 0, ary[i]);
+                        break;
+                    }
+                }
+                if(j == -1){
+                    ary2.unshift(ary[i]);
+                }
+            }
+            return ary2;
+        }
+        console.log(insertSort1(ary));
+        function insertSort2() {
+            var ary = arguments[0];
+            var ary2 = [];
+            if(ary.length < 2){
+                return ary;
+            }
+            ary2.push(ary[0]);
+            for(var i = 1; i < ary.length; i++){
+                for(var j = 0; j < ary2.length; j++){
+                    if(ary[i] < ary2[j]){
+                        ary2.splice(j, 0, ary[i]);
+                        break;
+                    }
+                }
+                if(j == ary2.length){
+                    ary2.push(ary[i]);
+                }
+            }
+            return ary2;
+        }
+        console.log(insertSort2(ary));
+    </script>
+</body>
+</html>

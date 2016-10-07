@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兼容性查找固定标签</title>
+</head>
+<body>
+    <div id = "div1">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p id = "p1"></p>
+        <a href=""></a>
+        <p id = "p2"></p>
+        <h1></h1>
+        <p id = "p3"></p>
+    </div>
+    <script type="text/javascript">
+        var oDiv = document.getElementById("div1");
+        console.log(oDiv.children);
+        console.log(oDiv.childNodes);
+        function children(ele) {
+            var ary = [];
+            var eleNodes = ele.childNodes;
+            for(var i = 0; i < eleNodes.length; i++){
+                if(eleNodes[i].nodeType == 1){
+                    ary.push(eleNodes[i]);
+                }
+            }
+            return ary;
+        }
+        console.log(children(oDiv));
+        function childrenEle1(ele,tag) {
+            var ary = [];
+            var eleNodes = ele.childNodes;
+            for(var i = 0; i < eleNodes.length; i++){
+                if(eleNodes[i].nodeType == 1){
+                    ary.push(eleNodes[i]);
+                }
+            }
+            for(var j = 0; j < ary.length; j++){
+                if(ary[j].nodeName.toUpperCase() !== tag.toUpperCase()){
+                    ary.splice(j,1);
+                    j--;
+                }
+            }
+            return ary;
+        }
+        console.log(childrenEle1(oDiv,"p"));
+        function childrenEle2(ele,tag) {
+            var ary = [];
+            var eleNodes = ele.childNodes;
+            for(var i = 0; i < eleNodes.length; i++){
+                if(eleNodes[i].nodeType == 1 && eleNodes[i].nodeName.toUpperCase() === tag.toUpperCase()){
+                    ary.push(eleNodes[i]);
+                }
+            }
+            return ary;
+        }
+        console.log(childrenEle2(oDiv,"p"));
+    </script>
+</body>
+</html>

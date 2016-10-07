@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易倒计时</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        div{width: 500px; height: 100px; margin: 50px auto; background-color: lightskyblue; border: 6px dashed #000; font-size: 30px; font-weight: bold; font-family: Arial; line-height: 100px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div>距离十一点还有：<span></span></div>
+    <script type="text/javascript">
+        function record() {
+            var oSpan = document.getElementsByTagName("span")[0];
+            var curTime = new Date().getTime();
+            var targetTime = new Date("2016/10/6 22:51:00").getTime();
+            var time = targetTime - curTime;
+            var h = Math.floor(time/1000/60/60);
+            var m = Math.floor((time - h*60*60*1000)/1000/60);
+            var s = Math.floor((time - h*60*60*1000 - m*60*1000)/1000);
+            function addZero(n) {
+                if(n < 10){
+                    return "0" + n;
+                }else{
+                    return n;
+                }
+            }
+            if(h + m + s <=0){
+                window.clearInterval(timer);
+                oSpan.innerHTML = "倒计时完毕！(*^__^*)";
+            }else{
+                oSpan.innerHTML = addZero(h) + ":" + addZero(m) + ":" + addZero(s);
+            }
+        }
+        record();
+        var timer = window.setInterval(record,1000);
+    </script>
+</body>
+</html>

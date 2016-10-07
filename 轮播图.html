@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        ul,ol{list-style: none;}
+        .clear:after{display: block; content: ""; clear: both;}
+        body{background-color: #ccc;}
+        div{width: 1400px; height: 430px; overflow: hidden; margin: 50px auto;}
+        ul{position: relative;}
+        img{width: 1400px; height: 430px;}
+    </style>
+</head>
+<body>
+    <div>
+        <ul id = "pic1" class="clear">
+            <li><img src="images/b-1.jpg" alt="bg1"></li>
+            <li><img src="images/b-2.jpg" alt="bg2"></li>
+            <li><img src="images/b-3.jpg" alt="bg3"></li>
+            <li><img src="images/b-4.jpg" alt="bg4"></li>
+            <li><img src="images/b-1.jpg" alt="bg1"></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var oUl1 = document.getElementById("pic1");
+        var timer = 1000;
+        oUl1.style.top = "0px";
+        window.setInterval(function () {
+            var topValue1 = parseInt(oUl1.style.top);
+            if(topValue1 > -1300){
+                oUl1.style.transition = "0.5s";
+                oUl1.style.top = topValue1 - 433 + "px";
+//                if(topValue1 < -433){
+//                    timer = 1000;
+//                }
+            }else{
+                oUl1.style.transition = "0s";
+                oUl1.style.top = "0px";
+                timer = 0;
+            }
+            console.log(timer);
+        },timer)
+    </script>
+</body>
+</html>

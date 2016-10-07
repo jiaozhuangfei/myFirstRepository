@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码+倒计时</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        div{width: 400px; background-color: #ccc; margin: 50px auto; border: 5px solid #ccc; padding: 50px;}
+        #text{height: 50px; font-size: 20px; float: left; width: 270px; text-align: center;}
+        #codeCheck{height: 54px; background-color: #fff; display: inline-block; width: 110px; float: left; margin-left: 10px; font-size: 30px; text-align: center; line-height: 54px; font-family: Arial; font-weight: bold;}
+        #con{width: 150px; height: 50px; margin: 0 auto; margin-top: 50px; display: block; cursor: pointer; font-size: 15px;}
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="请输入验证码（不区分大小写）" id = "text" maxlength="4"><span id = "codeCheck"></span><br><input type="button" value="点击提交" id = "con">
+    </div>
+    <script type="text/javascript">
+        function createCode() {
+            var codeRange = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var len = codeRange.length - 1;
+            var str = "";
+            while (str.length < 4){
+                var num = Math.round(Math.random() * len);
+                if(str.toUpperCase().indexOf(codeRange.charAt(num).toUpperCase()) === -1){
+                    str += codeRange.charAt(num);
+                }
+            }
+            return str;
+        }
+        function recordTime() {
+            alert("验证码输入错误！")
+            var total = 5;
+            oCon.value = "还剩" + (total + 1) + "s后重新输入";
+            var timer = window.setInterval(record,1000);
+            console.log(timer);
+            function record() {
+                if(total < 1){
+                    window.clearInterval(timer);
+                    oCon.disabled = "";
+                    oCon.value = "点击提交";
+                    oCon.style.cursor = "pointer";
+                }else{
+                    oCon.value = "还剩" + total + "s后重新输入";
+                    total--;
+                }
+            }
+        }
+        var oCon = document.getElementById("con");
+        var oCode = document.getElementById("codeCheck");
+        var oText = document.getElementById("text");
+        oCode.innerHTML = createCode();
+        oCon.onclick = function () {
+            if(oText.value.toUpperCase() === oCode.innerHTML.toUpperCase()){
+                alert("验证码输入正确！");
+                oCode.innerHTML = createCode();
+                oText.value = "";
+            }else{
+                oCon.style.cursor = "auto";
+                oCon.disabled = "false";
+                recordTime();
+            }
+        }
+    </script>
+</body>
+</html>
