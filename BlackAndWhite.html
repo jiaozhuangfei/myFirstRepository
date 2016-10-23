@@ -4,50 +4,101 @@
     <meta charset="UTF-8">
     <title>BlackAndWhite</title>
     <style type="text/css">
-        *{margin: 0; padding: 0; font-size: 0; background-color: #000;}
-        #allBody{width: 600px; height: 600px; padding: 20px; border: 5px solid lightblue; border-radius: 5px; margin: 50px auto; background-color: #ccc;}
-        #allBody div{position: relative;}
-        span{display: inline-block; width: 200px; height: 200px; border-radius: 20px; cursor: pointer; position: absolute;}
+        *{margin: 0; padding: 0; font-size: 0;}
+        html,body{background-color: #000;}
+        #allBody{width: 300px; height: 350px; padding: 20px; border: 5px solid lightblue; border-radius: 5px; margin: 50px auto; background-color: #ccc; position: relative;}
+        #insideBody{position: relative;}
+        span{display: inline-block; width: 100px; height: 100px; border-radius: 20px; cursor: pointer; position: absolute;}
+        select{font-size: 20px; width: 100px; position: absolute; left: 20px; bottom: 5px;}
+        p{position: absolute; left: 140px; bottom: 5px; font-size: 25px;}
+        b{font-size: 25px;}
     </style>
 </head>
 <body>
     <div id = "allBody">
-        <div>
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <div id = "insideBody">
+
         </div>
+        <select name="num" id="num">
+            <option value="3">3×3</option>
+            <option value="4">4×4</option>
+            <option value="5">5×5</option>
+            <option value="6">6×6</option>
+        </select>
+        <p>次数为：<b>N/A</b>次</p>
     </div>
     <script type="text/javascript">
-        var posAry = [[0,0],[200,0],[400,0],[0,200],[200,200],[400,200],[0,400],[200,400],[400,400]];
+        var allBody = document.getElementById("allBody");
+        var insideBody = document.getElementById("insideBody");
+        var posAry = [];
         var spans = document.getElementsByTagName("span");
-        function reset() {
+        var sel = document.getElementsByTagName("select")[0];
+        var b = document.getElementsByTagName("b")[0];
+        var sum = 0;
+        sel.onchange = function () {
+            addLi(this.value);
+            reset(this.value);
+            click();
+        };
+        function addLi(num) {
+            insideBody.innerHTML = "";
+            var frg = document.createDocumentFragment();
+            allBody.style.width = 100 * num + "px";
+            allBody.style.height = 100 * num + 20 + "px";
+            for(var i = 0; i < (num * num); i++){
+                var span = document.createElement("span");
+                span.style.backgroundColor = "white";
+                frg.appendChild(span);
+            }
+            insideBody.appendChild(frg);
+        }
+        addLi(3);
+        function reset(num) {
+            posAry = [];
+            var row = 0;
+            var col = 0;
+            var ary = [];
             for(var i = 0; i < spans.length; i++){
-                spans[i].style.backgroundColor = "white";
+                if((i+1)%num){
+                    ary[0] = row++ * 100;
+                    ary[1] = col * 100;
+                    posAry.push(ary);
+                }else{
+                    ary[0] = row * 100;
+                    ary[1] = col++ * 100;
+                    posAry.push(ary);
+                    row = 0;
+                }
                 spans[i].style.left = posAry[i][0] + "px";
                 spans[i].style.top = posAry[i][1] + "px";
             }
         }
-        reset();
-        for(var i = 0; i < spans.length; i++) {
-            spans[i].onclick = function () {
-                this.style.backgroundColor = (this.style.backgroundColor == "white") ? "black" : "white";
-                var leftValue = parseFloat(this.style.left);
-                var topValue = parseFloat(this.style.top);
-                for(var j = 0; j < spans.length; j++){
-                    var lValue = parseFloat(spans[j].style.left);
-                    var tValue = parseFloat(spans[j].style.top);
-                    if(leftValue == lValue){
-                        if((tValue == (topValue + 200)) || (tValue == (topValue - 200))){
-                            spans[j].style.backgroundColor = (spans[j].style.backgroundColor == "white") ? "black" : "white";
-                        }
-                    }else if(topValue == tValue){
-                        if((lValue == (leftValue + 200)) || (lValue == (leftValue - 200))){
-                            spans[j].style.backgroundColor = (spans[j].style.backgroundColor == "white") ? "black" : "white";
+        reset(3);
+        function click() {
+            for(var i = 0; i < spans.length; i++) {
+                spans[i].onclick = function () {
+                    this.style.backgroundColor = (this.style.backgroundColor == "white") ? "black" : "white";
+                    var leftValue = parseFloat(this.style.left);
+                    var topValue = parseFloat(this.style.top);
+                    for(var j = 0; j < spans.length; j++){
+                        var lValue = parseFloat(spans[j].style.left);
+                        var tValue = parseFloat(spans[j].style.top);
+                        if(leftValue == lValue){
+                            if((tValue == (topValue + 100)) || (tValue == (topValue - 100))){
+                                spans[j].style.backgroundColor = (spans[j].style.backgroundColor == "white") ? "black" : "white";
+                            }
+                        }else if(topValue == tValue){
+                            if((lValue == (leftValue + 100)) || (lValue == (leftValue - 100))){
+                                spans[j].style.backgroundColor = (spans[j].style.backgroundColor == "white") ? "black" : "white";
+                            }
                         }
                     }
+                    check();
+                    b.innerHTML = ++sum;
                 }
-                check();
             }
         }
+        click();
         function check() {
             for(var i = 0; i < spans.length; i++){
                 if(spans[i].style.backgroundColor != "black"){
@@ -55,10 +106,14 @@
                 }
             }
             window.setTimeout(function () {
-                alert("congratulation!");
-                reset();
+                alert("Congratulation! Your score is " + sum);
+                b.innerHTML = "N/A";
+                addLi(sel.value);
+                reset(sel.value);
+                click();
             },100);
         }
+
     </script>
 </body>
 </html>
