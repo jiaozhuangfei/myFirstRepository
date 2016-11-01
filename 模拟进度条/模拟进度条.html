@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟进度条</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        .box{width: 1100px; height: 30px; margin: 100px auto;}
+        .box:after{content: ""; clear: both;}
+        .box>i{display: block; width: 28px; height: 28px; border: 2px solid #00b3ee; border-radius: 50%; float: left; cursor: pointer;}
+        .scroll{float: left; border: 1px solid #00b3ee; width: 1000px; height: 30px;margin-left: 20px; position: relative;}
+        .scroll p{position: absolute; left: 50%; line-height: 30px;}
+        .scroll i{display: block; width: 10px; height: 30px; float: left;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <i class="button"></i>
+    <div class="scroll">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><p>0%</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js.js"></script>
+</html>

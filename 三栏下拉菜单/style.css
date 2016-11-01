@@ -1,0 +1,5 @@
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+div{width: 200px; text-align: center; margin: 100px auto;}
+div>ul>li>h3{background-color: greenyellow;}
+div>ul>li>ul{background-color: #E0F2BE;}
