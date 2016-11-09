@@ -28,7 +28,7 @@ ul,ol{list-style: none;}
 #navTop .navRight li:nth-child(5){position: relative;}
 #navTop .navRight li i{display: inline-block; width: 28px; height: 16px; background: url("../images/icon-new-tip_6fb0a69.png") no-repeat; position: absolute; right: -25px; top: 8px;}
 /*左侧导航栏*/
-#middleBody{margin-top: 35px; margin-bottom: 100px;}
+#middleBody{margin-top: 35px;}
 #middleBody .leftList{width: 230px; float: left; margin-top: 2px;}
 #middleBody .leftList>ul{background-color: #fafafa;}
 #middleBody .leftList>ul>li{border: 2px solid transparent; padding: 16px 19px 6px 19px; position: relative; margin-top: -2px; z-index: 10;}
@@ -117,3 +117,47 @@ ul,ol{list-style: none;}
 #link>a{position: absolute; right: 10px; top: 24px; font-weight: normal; display: inline-block; color: #555;}
 #link>a i{display: inline-block; width: 10px; height: 8px; background: url("../images/arrow_down_769cdcc.png") no-repeat; margin-left: 3px;/* transform: scaleY(-1);*/}
 /*底部注册*/
+#bottomReg{border-bottom: 1px solid #ebebeb; background: url("../images/footerbar_repeat_c5aebac.png") repeat;}
+#bottomReg i, #bottomReg b, #bottomReg span, #bottomReg a{display: inline-block;}
+#bottomReg b{width: 17px; height: 30px; background: url("../images/footbar_no_2448ca7.png") no-repeat; margin: 0 1px;}
+#bottomReg .point{background: url("../images/footbar_comma_365ec06.png") no-repeat; width: 5px; height: 10px; margin-left: 5px;}
+#bottomReg .reg .company i, #bottomReg .reg .position i{width: 28px; height: 14px; background: url("../images/footbar_text_fd4f55f.png") no-repeat; margin-left: 8px;}
+#bottomReg .reg{height: 64px; position: relative;}
+#bottomReg .reg .house{position: absolute; left: -95px; top: -54px;}
+#bottomReg .reg .house img{width: 95px; height: 54px;}
+#bottomReg .reg .logo{position: absolute; left: -95px;}
+#bottomReg .reg .logo img{width: 138px; height: 45px; margin-top: 9px;}
+#bottomReg .reg .company{margin-top: 17px; margin-left: 295px;}
+#bottomReg .reg .company b:nth-child(1){background-position: 0 -210px;}
+#bottomReg .reg .company b:nth-child(2){background-position: 0 -30px;}
+#bottomReg .reg .company b:nth-child(3){background-position: 0 -60px;}
+#bottomReg .reg .company b:nth-child(5){background-position: 0 -120px;}
+#bottomReg .reg .company b:nth-child(6){background-position: 0 -150px;}
+#bottomReg .reg .company b:nth-child(7){background-position: 0 -180px;}
+#bottomReg .reg .position{margin-left: 66px; height: 45px; margin-top: 9px;}
+#bottomReg .reg .position b:nth-child(1){background-position: 0 -210px;}
+#bottomReg .reg .position b:nth-child(2){background-position: 0 -30px;}
+#bottomReg .reg .position b:nth-child(3){background-position: 0 -60px;}
+#bottomReg .reg .position b:nth-child(5){background-position: 0 -120px;}
+#bottomReg .reg .position b:nth-child(6){background-position: 0 -150px;}
+#bottomReg .reg .position b:nth-child(7){background-position: 0 -180px;}
+#bottomReg .reg .position i{background-position: 0 -107px;}
+#bottomReg .reg .login{width: 142px; height: 64px; background: url("../images/footbar_btn_green_ff73eb2.png") repeat; position: absolute; right: 92px;}
+#bottomReg .reg .login:hover{background: url("../images/footbar_btn_green_hover_e17c99f.png") repeat;}
+#bottomReg .reg .login em{display: inline-block; width: 49px; height: 24px; background: url("../images/footbar_login_72d6866.png") no-repeat; margin: 20px 47px;}
+#bottomReg .quickReg{height: 64px; width: 2000px; position: absolute; right: -1908px; top: 0; background: url("../images/footbar_btn_red_90cc061.png") repeat; margin: 0 auto;}
+#bottomReg .reg .quickReg a{width: 212px; height: 64px;}
+#bottomReg .reg .quickReg a:hover{background: url("../images/footbar_btn_red_hover_8c30256.png") repeat;}
+#bottomReg .reg .quickReg a em{display: inline-block; width: 119px; height: 24px; background: url("../images/footbar_register_f544a92.png") no-repeat center; margin: 20px 51px;}
+/*底部其他信息*/
+#bottomInfo{margin-top: 10px;}
+#bottomInfo a{display: inline-block;}
+#bottomInfo i{display: inline-block; width: 198px; height: 19px; background: url("../images/footer_lagou_icon_e44385f.png") no-repeat; float: left;}
+#bottomInfo ul{margin-left: 37px; float: left;}
+#bottomInfo li{float: left; margin-left: 14px;}
+#bottomInfo li, #bottomInfo li a{color: #555;}
+#bottomInfo li a img{width: 30px; height: 16px; vertical-align: top; margin-left: 3px;}
+#bottomInfo p, #bottomInfo p a{font-size: 12px; color: #d5d5d5;}
+#bottomInfo p{display: inline-block; height: 25px; line-height: 25px; margin-left: 290px; clear: both;}
+#bottomInfo .safe{margin-right: 7px;}
+#bottomInfo .safe img{width: 60px; height: 25px; vertical-align: top;}
