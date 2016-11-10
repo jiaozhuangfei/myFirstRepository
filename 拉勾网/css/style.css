@@ -44,7 +44,7 @@ ul,ol{list-style: none;}
 #middleBody .leftList>ul>li .hidden{width: 600px; border: 2px solid #c9cbce; position: absolute; left: 226px; top: -65%; display: none; background-color: #fff;}
 #middleBody .leftList>ul>li .hiddenBar{position: absolute; right: -2px; bottom: 0; width: 2px; height: 100%; background-color: #fff; display: none;}
 #middleBody .leftList #firstLi .hidden{top: -2px;}
-#middleBody .leftList #lastLi .hidden{top: -238%;}
+#middleBody .leftList #lastLi .hidden{top: -250%;}
 #middleBody .leftList #toTop .hidden{top: -200%;}
 #middleBody .leftList>ul>li .hidden>ul{padding-right: 60px;}
 #middleBody .leftList>ul>li .hidden p{float: left; width: 100px; text-align: right;}
