@@ -164,7 +164,7 @@ ul,ol{list-style: none;}
 /*侧面火箭*/
 #rocket{position: fixed; width: 50px; height: 120px; right: 365px; bottom: 90px;}
 #rocket a{display: block; width: 28px; margin: 0 auto;}
-#rocket a:nth-child(1){background: url("../images/backtop_4d5862f.png") no-repeat; height: 64px; margin-bottom: 10px;}
+#rocket a:nth-child(1){background: url("../images/backtop_4d5862f.png") no-repeat; height: 64px; margin-bottom: 10px; display: none;}
 #rocket a:nth-child(1):hover{background-position: -28px;}
 #rocket a:nth-child(2){background: url("../images/feedback_06c5af9.png") no-repeat; height: 31px;}
 #rocket a:nth-child(2):hover{background-position: 0 -31px;}
