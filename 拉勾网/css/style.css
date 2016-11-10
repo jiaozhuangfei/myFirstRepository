@@ -35,7 +35,7 @@ ul,ol{list-style: none;}
 #middleBody .leftList>ul>li:hover{border-color: #c9cbce; background-color: #fff;}
 #middleBody .leftList>ul>li:hover .hidden{display: block;}
 #middleBody .leftList>ul>li:hover .hiddenBar{display: block;}
-#middleBody .leftList>ul>li p{font-size: 18px; color: #333; margin-bottom: 10px;}
+#middleBody .leftList>ul>li>p{font-size: 18px; color: #333; margin-bottom: 10px;}
 #middleBody .leftList>ul>li p i{display: inline-block; width: 29px; height: 13px; background: url("../images/arr_7b73530.png") no-repeat; float: right; margin: 5px -25px 0 0;}
 #middleBody .leftList>ul>li p span{display: inline-block; width: 37px; height: 17px; background: url("../images/newLabel_6636f33.png") no-repeat; margin-left: 5px;}
 #middleBody .leftList>ul>li>ul>li{float: left; margin: 0 18px 10px 0;}
@@ -108,7 +108,7 @@ ul,ol{list-style: none;}
 #more:hover{background-color: #00a57f;}
 #more i{display: inline-block; width: 18px; height: 18px; background: url("../images/arrow_5d2c3a8.png") no-repeat; margin: 7px 0 0 7px; vertical-align: top;}
 /*友情链接*/
-#link{padding-top: 22px; position: relative; margin-bottom: 45px;}
+#link{padding-top: 22px; position: relative; margin-bottom: 45px; height: 20px; overflow: hidden;}
 #link ul a{color: #6a6a6a; display: inline-block; padding: 0 12px; border-right: 1px solid #6a6a6a; height: 14px; line-height: 14px;}
 #link a:hover{color: #00b38a; text-decoration: underline;}
 #link>span{display: inline-block; width: 80px; float: left;}
@@ -117,12 +117,12 @@ ul,ol{list-style: none;}
 #link>a{position: absolute; right: 10px; top: 24px; font-weight: normal; display: inline-block; color: #555;}
 #link>a i{display: inline-block; width: 10px; height: 8px; background: url("../images/arrow_down_769cdcc.png") no-repeat; margin-left: 3px;/* transform: scaleY(-1);*/}
 /*底部注册*/
-#bottomReg{border-bottom: 1px solid #ebebeb; background: url("../images/footerbar_repeat_c5aebac.png") repeat;}
+#bottomReg{border-bottom: 1px solid #ebebeb; background: url("../images/footerbar_repeat_c5aebac.png") repeat; position: fixed; bottom: 0; width: 100%;}
 #bottomReg i, #bottomReg b, #bottomReg span, #bottomReg a{display: inline-block;}
 #bottomReg b{width: 17px; height: 30px; background: url("../images/footbar_no_2448ca7.png") no-repeat; margin: 0 1px;}
 #bottomReg .point{background: url("../images/footbar_comma_365ec06.png") no-repeat; width: 5px; height: 10px; margin-left: 5px;}
 #bottomReg .reg .company i, #bottomReg .reg .position i{width: 28px; height: 14px; background: url("../images/footbar_text_fd4f55f.png") no-repeat; margin-left: 8px;}
-#bottomReg .reg{height: 64px; position: relative;}
+#bottomReg .reg{height: 64px; position: relative; width: 1024px; margin: 0 auto;}
 #bottomReg .reg .house{position: absolute; left: -95px; top: -54px;}
 #bottomReg .reg .house img{width: 95px; height: 54px;}
 #bottomReg .reg .logo{position: absolute; left: -95px;}
@@ -161,3 +161,11 @@ ul,ol{list-style: none;}
 #bottomInfo p{display: inline-block; height: 25px; line-height: 25px; margin-left: 290px; clear: both;}
 #bottomInfo .safe{margin-right: 7px;}
 #bottomInfo .safe img{width: 60px; height: 25px; vertical-align: top;}
+/*侧面火箭*/
+#rocket{position: fixed; width: 50px; height: 120px; right: 365px; bottom: 90px;}
+#rocket a{display: block; width: 28px; margin: 0 auto;}
+#rocket a:nth-child(1){background: url("../images/backtop_4d5862f.png") no-repeat; height: 64px; margin-bottom: 10px;}
+#rocket a:nth-child(1):hover{background-position: -28px;}
+#rocket a:nth-child(2){background: url("../images/feedback_06c5af9.png") no-repeat; height: 31px;}
+#rocket a:nth-child(2):hover{background-position: 0 -31px;}
+#rocket a:nth-child(3){color: #6a6a6a; font-size: 12px; width: 100%; margin-top: 5px;}
