@@ -73,7 +73,8 @@ ul,ol{list-style: none;}
 #input ul li a:hover{text-decoration: underline;}
 /*右侧主体部分--轮播图*/
 #banner{margin-top: 12px; font-size: 0; position: relative;}
-#banner .bannerImg{width: 612px; height: 160px; overflow: hidden; float: left;}
+#banner .bannerImg{width: 612px; height: 160px; overflow: hidden; float: left; position: relative;}
+#banner .bannerImg ul{position: absolute;}
 #banner .bannerImg img{width: 612px; height: 160px; cursor: pointer;}
 #banner .bannerList{width: 121px; height: 160px; float: left; margin-left: 11px;}
 #banner .bannerList li{border: 4px solid #d3d3d3; margin-bottom: 5px; position: relative;}
@@ -162,7 +163,7 @@ ul,ol{list-style: none;}
 #bottomInfo .safe{margin-right: 7px;}
 #bottomInfo .safe img{width: 60px; height: 25px; vertical-align: top;}
 /*侧面火箭*/
-#rocket{position: fixed; width: 50px; height: 120px; right: 365px; bottom: 90px;}
+#rocket{position: fixed; width: 50px; height: 120px; left: 50%; bottom: 90px; margin-left: 540px;}
 #rocket a{display: block; width: 28px; margin: 0 auto;}
 #rocket a:nth-child(1){background: url("../images/backtop_4d5862f.png") no-repeat; height: 64px; margin-bottom: 10px; display: none;}
 #rocket a:nth-child(1):hover{background-position: -28px;}
