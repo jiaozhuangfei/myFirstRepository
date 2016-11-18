@@ -91,7 +91,7 @@ ul,ol{list-style: none;}
 #sixImg div{position: absolute; left: 1px; top: 1px; background-color: #00b38a; opacity: 0.9; width: 101px; height: 113px; color: #fff; padding: 0 6px; overflow: hidden; display: none;}
 #sixImg div p{padding: 6px 0;}
 #sixImg div .title{font-size: 24px; text-align: center; border-bottom: 5px solid #5ecfb5;}
-#sixImg div .text{font-size: 12px; line-height: 18px;}
+#sixImg div .text{font-size: 12px; line-height: 18px; padding: 0 3px;}
 /*职位信息*/
 #tab{margin-top: 26px; padding-bottom: 97px; border-bottom: 1px solid #ececed; position: relative;}
 #tab .nav{background-color: #f6f6f6; color: #999;}
@@ -112,10 +112,11 @@ ul,ol{list-style: none;}
 #link{padding-top: 22px; position: relative; margin-bottom: 45px; height: 15px; overflow: hidden;}
 #link ul a{color: #6a6a6a; display: inline-block; padding: 0 12px; border-right: 1px solid #6a6a6a; height: 14px; line-height: 14px;}
 #link a:hover{color: #00b38a; text-decoration: underline;}
-#link>span{display: inline-block; width: 80px; float: left;}
+#link>span{display: inline-block; width: 80px; float: left; margin-top: -1px;}
 #link ul{width: 590px; margin-left: 80px;}
-#link ul li{float: left; line-height: 15px;}
-#link>a{position: absolute; right: 10px; top: 24px; font-weight: normal; display: inline-block; color: #555;}
+#link ul li{float: left; line-height: 15px; margin-bottom: 18px;}
+#link ul li a{font-size: 12px;}
+#link>a{position: absolute; right: 10px; top: 24px; font-weight: normal; display: inline-block; color: #555; margin-top: -3px;}
 #link>a i{display: inline-block; width: 10px; height: 8px; background: url("../images/arrow_down_769cdcc.png") no-repeat; margin-left: 3px;/* transform: scaleY(-1);*/}
 /*底部注册*/
 #bottomReg{border-bottom: 1px solid #ebebeb; background: url("../images/footerbar_repeat_c5aebac.png") repeat; position: fixed; bottom: 0; width: 100%; z-index: 100;}
@@ -165,7 +166,7 @@ ul,ol{list-style: none;}
 /*侧面火箭*/
 #rocket{position: fixed; width: 50px; height: 120px; left: 50%; bottom: 90px; margin-left: 540px;}
 #rocket a{display: block; width: 28px; margin: 0 auto;}
-#rocket a:nth-child(1){background: url("../images/backtop_4d5862f.png") no-repeat; height: 64px; margin-bottom: 10px; opcity: 0; filter: alpha(opacity=0);}
+#rocket a:nth-child(1){background: url("../images/backtop_4d5862f.png") no-repeat; height: 64px; margin-bottom: 10px; opacity: 0; filter: alpha(opacity=0);}
 #rocket a:nth-child(1):hover{background-position: -28px;}
 #rocket a:nth-child(2){background: url("../images/feedback_06c5af9.png") no-repeat; height: 31px;}
 #rocket a:nth-child(2):hover{background-position: 0 -31px;}
